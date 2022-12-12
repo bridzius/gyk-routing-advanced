@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { MovieSearchService } from 'src/app/services/movie-search.service';
 import { MovieListObject } from 'src/app/services/types';
@@ -25,12 +26,18 @@ export class MovieSearchFormComponent {
 
   constructor(
     formBuilder: FormBuilder,
-    private movieSearch: MovieSearchService
+    private movieSearch: MovieSearchService,
+    private router: Router
   ) {
     this.movieSearchForm = formBuilder.group({
       title: formBuilder.control('', Validators.required),
       year: formBuilder.control<number | null>(null),
     });
+  }
+
+  navigateToMovie(id: number) {
+    this.router.navigate(['movies', `${id}`]);
+    this.movies$ = of([]);
   }
 
   findMovie() {

@@ -33,6 +33,7 @@
   class="movie"
   *ngFor="let movie of movies$ | async"
   class="movie-container"
+  (click)="navigateToMovie(movie.id)"
 >
   <span class="movie-image">
     <img

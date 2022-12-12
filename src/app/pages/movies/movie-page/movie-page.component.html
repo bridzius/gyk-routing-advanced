@@ -1,2 +1,13 @@
-<p>movie-page works!</p>
-{{ movieId$ | async }}
+<div class="movie" *ngIf="movie$ | async as movie" class="movie-container">
+  <span class="movie-image">
+    <img
+      width="200"
+      height="300"
+      src="https://image.tmdb.org/t/p/w200{{ movie.poster_path }}"
+    />
+  </span>
+  <span class="movie-info">
+    <h2>{{ movie.title }}</h2>
+    <p>{{ movie.overview }}</p>
+  </span>
+</div>

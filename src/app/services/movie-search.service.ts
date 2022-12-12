@@ -25,7 +25,7 @@ export class MovieSearchService {
       .pipe(map((response) => response.results));
   }
 
-  getMovie(id: number): Observable<MovieListObject> {
+  getMovie(id: string): Observable<MovieListObject> {
     return this.httpClient.get<MovieListObject>(
       `https://api.themoviedb.org/3/movie/${id}`,
       {
