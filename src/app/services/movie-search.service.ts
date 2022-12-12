@@ -9,9 +9,11 @@ import { MovieListObject, MovieSearchResponse } from './types';
 export class MovieSearchService {
   constructor(private httpClient: HttpClient) {}
 
+  private readonly api_key = '8cd4807e5f458e0cbb740a6e3f872675';
+
   getMovies(query: string, year: number | null): Observable<MovieListObject[]> {
     const requiredParameters = {
-      api_key: '8cd4807e5f458e0cbb740a6e3f872675',
+      api_key: this.api_key,
       query,
     };
     const params = year ? { ...requiredParameters, year } : requiredParameters;
@@ -21,5 +23,16 @@ export class MovieSearchService {
         params: params,
       })
       .pipe(map((response) => response.results));
+  }
+
+  getMovie(id: number): Observable<MovieListObject> {
+    return this.httpClient.get<MovieListObject>(
+      `https://api.themoviedb.org/3/movie/${id}`,
+      {
+        params: {
+          api_key: this.api_key,
+        },
+      }
+    );
   }
 }
