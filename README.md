@@ -20,6 +20,7 @@ Branch: `task-1`
 
 - Pakeiskite savo routing mechanizmą taip, kad kiekvienas feature modulis būtų "lazy loaded".
 - Nepamirškite viduje Feature Module aprašyti navigacijos `RouterModule.forChild()`
+- Ištrinkite Feature modulius iš `app.module.ts -> @NgModule.imports`
 
 Branch: `task-2`
 
@@ -50,7 +51,7 @@ Branch: `task-4`
 - Papildomai: Saugokite autorizacijos būseną [sessionStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage), kad ji išliktų tarp puslapio perkrovimų.
 
 ```bash
-npx ng g s auth 
+npx ng g s auth
 ```
 
 Branch: `task-5`
@@ -61,7 +62,7 @@ Branch: `task-5`
 - Naudokite naują guard `/movies` URL ir neįleiskite neprisijungusių vartotojų.
 
 ```bash
-npx ng g guard auth 
+npx ng g guard auth
 ```
 
 Branch: `task-6`
