@@ -1,0 +1,23 @@
+.error-message {
+    color: red;
+}
+
+.movie-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: solid thin black;
+    border-radius: 0px 8px 8px 0px;
+    margin: 20px;
+}
+
+.movie-info {
+    flex: 1;
+    padding: 10px;
+}
+
+.movie-image {
+    margin: 0;
+    padding: 0;
+    max-height: 300px;
+}
