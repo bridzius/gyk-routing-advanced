@@ -1,11 +1,46 @@
-<h1>{{title}}</h1>
+<h1>{{ title }}</h1>
 <div>
   <ul class="menu">
-    <li><a routerLink="/" routerLinkActive="menu-link--active" class="menu-link">Home</a></li>
-    <li><a routerLink="/news" routerLinkActive="menu-link--active" class="menu-link">News</a></li>
-    <li><a routerLink="/movies" routerLinkActive="menu-link--active" class="menu-link">Movies</a></li>
-    <li><a routerLink="/tv-shows" routerLinkActive="menu-link--active" class="menu-link">TV Shows</a></li>
-    <li><a routerLink="/celebs" routerLinkActive="menu-link--active" class="menu-link">Celebs</a></li>
+    <li>
+      <a
+        routerLink="/home"
+        routerLinkActive="menu-link--active"
+        class="menu-link"
+        >Home</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/news"
+        routerLinkActive="menu-link--active"
+        class="menu-link"
+        >News</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/movies"
+        routerLinkActive="menu-link--active"
+        class="menu-link"
+        >Movies</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/tv-shows"
+        routerLinkActive="menu-link--active"
+        class="menu-link"
+        >TV Shows</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/celebs"
+        routerLinkActive="menu-link--active"
+        class="menu-link"
+        >Celebs</a
+      >
+    </li>
   </ul>
 </div>
 <router-outlet></router-outlet>

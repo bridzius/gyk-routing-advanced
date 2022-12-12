@@ -2,34 +2,25 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomePageComponent } from './components/home-page.component';
-import { NewsPageComponent } from './components/news-page.component';
-import { MoviesPageComponent } from './components/movies-page.component';
-import { TvShowsPageComponent } from './components/tv-shows-page.component';
-import { CelebsPageComponent } from './components/celebs-page.component';
 import { NotFoundPageComponent } from './components/not-found-page.component';
-import { MoviePageComponent } from './components/movie-page.component';
-import { MovieSearchFormComponent } from './components/movie-search-form/movie-search-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeModule } from './pages/home/home.module';
+import { CelebsModule } from './pages/celebs/celebs.module';
+import { MoviesModule } from './pages/movies/movies.module';
+import { NewsModule } from './pages/news/news.module';
+import { TvShowsModule } from './pages/tv-shows/tv-shows.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomePageComponent,
-    NewsPageComponent,
-    MoviesPageComponent,
-    TvShowsPageComponent,
-    CelebsPageComponent,
-    NotFoundPageComponent,
-    MoviePageComponent,
-    MovieSearchFormComponent,
-  ],
+  declarations: [AppComponent, NotFoundPageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
     HttpClientModule,
+    HomeModule,
+    CelebsModule,
+    MoviesModule,
+    NewsModule,
+    TvShowsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
