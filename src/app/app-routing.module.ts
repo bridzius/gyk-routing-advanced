@@ -10,15 +10,31 @@ import { TvShowsPageComponent } from './pages/tv-shows/tv-shows-page/tv-shows-pa
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomePageComponent },
-  { path: 'news', component: NewsPageComponent },
+  {
+    path: 'home',
+    loadChildren: () =>
+      import('./pages/home/home.module').then((m) => m.HomeModule),
+  },
+  {
+    path: 'news',
+    loadChildren: () =>
+      import('./pages/news/news.module').then((m) => m.NewsModule),
+  },
   {
     path: 'movies',
-    component: MoviesPageComponent,
-    children: [{ path: ':id', component: MoviePageComponent }],
+    loadChildren: () =>
+      import('./pages/movies/movies.module').then((m) => m.MoviesModule),
   },
-  { path: 'tv-shows', component: TvShowsPageComponent },
-  { path: 'celebs', component: CelebsPageComponent },
+  {
+    path: 'tv-shows',
+    loadChildren: () =>
+      import('./pages/tv-shows/tv-shows.module').then((m) => m.TvShowsModule),
+  },
+  {
+    path: 'celebs',
+    loadChildren: () =>
+      import('./pages/celebs/celebs.module').then((m) => m.CelebsModule),
+  },
   { path: '**', component: NotFoundPageComponent },
 ];
 

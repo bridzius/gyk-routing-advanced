@@ -12,6 +12,16 @@ import { RouterModule } from '@angular/router';
     MoviePageComponent,
     MovieSearchFormComponent,
   ],
-  imports: [CommonModule, ReactiveFormsModule, RouterModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    RouterModule.forChild([
+      {
+        path: '',
+        component: MoviesPageComponent,
+        children: [{ path: ':id', component: MoviePageComponent }],
+      },
+    ]),
+  ],
 })
 export class MoviesModule {}
