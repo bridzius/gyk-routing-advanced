@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundPageComponent } from './components/not-found-page.component';
+import { AuthGuard } from './guards/auth.guard';
 import { CelebsPageComponent } from './pages/celebs/celebs-page/celebs-page.component';
 import { HomePageComponent } from './pages/home/home-page/home-page.component';
 import { MoviePageComponent } from './pages/movies/movie-page/movie-page.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
   },
   {
     path: 'movies',
+    canActivate: [AuthGuard],
     loadChildren: () =>
       import('./pages/movies/movies.module').then((m) => m.MoviesModule),
   },
